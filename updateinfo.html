@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>update info</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:white;
+			opacity: 0.6;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color:white;
+			opacity:  0.6;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color:white;
+			opacity:  0.6;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color:white;
+			opacity: 0.6;
+		}
+		select{
+			color: white;
+		}
+		option{
+			color: #2bc0ed;
+		}
+		.search{
+			background: transparent;
+			border: none;
+		}
+		select.search:focus{
+			border: none;
+		}
+		.inputfield{
+			border: none;
+			background: transparent;
+			border-bottom: 1px solid white; 
+		}
+		.inputfield:focus{
+			background: transparent;
+			border-bottom: 1px solid #00838F;
+			color: white; 
+		}
+		.inputfield:hover{
+			border-bottom: 1px solid #00838F;
+			-webkit-transition:0.3s;
+		}
+		select:focus, textarea:focus, input:focus{
+			outline: none;
+		}
+		.inputfield:focus ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:#00838F;
+			opacity: 0.4;
+		}
+		@font-face {
+			font-family: PN;
+			src: url(ProximaNova-Regular.otf);
+		}
+		body{
+			background-color: #F4F5F5;
+			font-size: 13.5;
+			font-family: PN;
+			color: #A7A9AC;
+			font-weight: 600;
+		}
+		.w3-panel{
+			background-color:#FFFFFF;
+			padding:0.01em 16px;
+			//margin: 5px;
+			margin-top:16px!important;
+			margin-bottom:-5px!important
+		}
+		.w3-card-2{
+			box-shadow:0 1px 2px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important
+		}
+		.blue{
+			background-color:#2bc0ed;
+			color: white;
+			margin: 8px;
+			text-align: center;
+		}
+		.filters{
+			margin: 5px;
+		}
+		.leftbutton{
+			background-color: #2bc0ed;
+			border: 2px solid #2bc0ed;
+			color: white;
+		}
+		.rightbutton{
+			border: 2px solid #2bc0ed;
+			background: transparent;
+			color: #2bc0ed;
+		}
+		.contact{
+			background-color: #2bc0ed;
+			border: 2px solid #2bc0ed;
+			color: white;
+			width: 90px;
+			border-radius: 3px;	
+		}
+		.inputfield{
+			border: none;
+			background: transparent;
+			border-bottom: 1px solid white; 
+		}
+		.inputfield:focus{
+			background: transparent;
+			border-bottom: 1px solid #00838F;
+			color: white; 
+		}
+		.inputfield:hover{
+			border-bottom: 1px solid #00838F;
+			-webkit-transition:0.3s;
+		}
+		select:focus, textarea:focus, input:focus{
+			outline: none;
+		}
+		.inputfield:focus ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:#00838F;
+			opacity: 0.4;
+		}
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:white;
+			opacity: 0.6;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color:white;
+			opacity:  0.6;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color:white;
+			opacity:  0.6;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color:white;
+			opacity: 0.6;
+		}
+		select{
+			color: white;
+		}
+		option{
+			color: #2bc0ed;
+		}
+		.search{
+			background: transparent;
+			border: none;
+		}
+		select.search:focus{
+			border: none;
+		}
+		.foo {
+			//position: relative;
+			//right: 0;
+			//bottom: 0;
+			//left: 0;
+			padding: 0;
+			margin-top: 50px;
+			//overflow: initial;
+		}
+		.menu-icon{
+			//background-color: red;
+			display: none;
+		}
+		.navbottom,.navbottom2,.footer{
+			background: linear-gradient(to right,#2bc0ed,#7dd2ee,#2bc0ed);
+
+		}
+		.contactdetails{
+			margin-top: 30px;
+		}
+		.footernavlinks{
+			margin-top: 100px;
+		}
+		.messageform{
+			margin-top: 80px;
+		}
+		.inputfield:focus ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			color:#00838F;
+			opacity: 0.4;
+		}
+		.foo a{
+			color: white;
+		}
+		.foo a:hover{
+			text-decoration: none;
+			color: #0277BD;
+			-webkit-transition:0.3s;
+			-moz-transition:0.3s;
+		}
+		.submitbutton{
+			margin-top: 10px;
+			text-align: center;
+			text-decoration: none;
+			background-color: white;
+			border-radius: 3px;
+			padding: 7px;
+			color:#2bc0ed !important;
+		}
+		.submitbutton:hover{
+			text-decoration: none;
+			color:#00838F !important;
+			box-shadow: 1px;
+			-webkit-transition: 0.3s;
+			-moz-transition: 0.3;
+		}
+		.glyphicon{
+			color: white;
+		}
+		.clinics{
+			font-weight:200;
+			text-decoration: none;
+			color:#A7A9AC;
+		}
+		.clinics:hover{
+			text-decoration: none;
+			color: #00838F;
+			-webkit-transition: 0.3s;
+			-moz-transition: 0.3;
+		}
+		.filterselect{
+			color: #A7A9AC;
+			padding:5px;
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid #A7A9AC;
+		}
+		.filterselect option{
+			color: #A7A9AC;
+		}
+		.doctorcards{
+			padding:0px;
+			margin-left:17px;
+		}
+		@media screen and (max-width: 976px){
+			.responsive{
+				text-align: center;
+			}
+			.navbar-brand{
+			margin:0px;
+			padding: 5px;
+			margin-left:14px;
+			}
+		}
+		@media screen and (max-width: 1109px){
+			.doctorcards{
+				margin:auto;
+				padding: 7px;
+			}
+			.bodygold{
+				margin: 7px;
+				padding: 7px;
+			}
+		}
+		.navbar-brand{
+			margin-top:5px;
+		}
+		.navbar-default .navbar-nav>li>a{
+			color: white;
+		}
+
+
+
+
+@font-face {
+    	font-family: PN;
+    	src: url(ProximaNova-Regular.otf);
+	}
+
+		.w3-panel{ background-color:#FFFFFF;padding:0.01em 16px;margin-top:16px!important;margin-bottom:16px!important}
+	.w3-card-2{box-shadow:0 1px 2px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
+
+.textheading{
+		font-size: 19.5px;
+		font-family: PN;
+		color: #A7A9AC;
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default" style="background: linear-gradient(to right,#2bc0ed,#7dd2ee,#2bc0ed);padding-bottom: 0px;margin-bottom:0;color:white;">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img  style="height:33px;width:150px;margin-left:0px;" src="medsearch_white.png">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav" style="margin-top: 19px;text-align:center;//margin-top:18px">
+				<li style="margin-left:40px;">&nbsp;</li>
+					<li class="dropdown" style="margin-top: 7px;">
+						<select name="city" placeholder="City" class="inputfield" style="width:100px;padding:2px;">
+							<option value="" selected>City</option>
+							<option value="city-1">city-1</option>
+							<option value="city-2">city-2</option>
+						</select>
+					</li>
+					<li>
+						<form class="navbar-form navbar-left">
+							<div class="form-group">
+								<input type="text" name="city" placeholder="Procedure" class="inputfield">
+							<button type="submit" value="submit" name="submit" class="search"><span class="glyphicon glyphicon-search" style="color:white;"></span></button>
+							</div>
+						</form>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" style="margin-top: 7px;text-align:center">
+					<li style="font-size: 20px;  font-weight: 200;"><a href="#">User Name<img src="woman.jpg" style="border-radius:50%;height:40px;width:40px;margin-left:20px"></a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+
+<!-- container -->
+<div class="container" style="margin-top:0px; padding :0px;">
+	
+
+<div class="container-fluid "style="background-color:#F4F5F5;">
+	<div class="col-md-2"></div>
+	<div class="col-md-6 w3-panel w3-card-2" style="margin-right:10px;">
+
+<div class="col-md-4" style="margin-top:40px;" align="center"><img class="img-responsive" src="woman.jpg" style="border-radius:50%;height:150px;width:150px;vertical-align: middle;"></img>
+
+</div>
+
+<div class="col-md-4" style="margin-top:18%;" align="center"><h4 style="color:#098FCB">Jenna Malone</h4></div>
+
+<div class="col-md-12" style="margin-top:20px;">
+	<h4>Update Personal Information</h4>
+				<hr>
+
+&nbsp;
+<form style="margin-top:10px; ">
+<div class="col-md-12" style="padding:0px">
+	<div class=col-md-2><h5>Phone</h5></div>
+	<div class=col-md-5><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+	<div class=col-md-1><h5>City</h5></div>
+	<div class=col-md-4><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+</div>
+<div class="col-md-12" style="padding:0px">
+	<div class=col-md-2><h5>State</h5></div>
+	<div class=col-md-5><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+	<div class=col-md-1><h5>Country</h5></div>
+	<div class=col-md-4><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+</div>	
+
+	<div class="col-md-12" style="padding:0px">
+	<div class=col-md-2><h5>Secondary Email</h5></div>
+	<div class=col-md-10><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+</div>
+	<div class="col-md-12" style="padding:0px">
+	<div class=col-md-2><h5>Address<h5></div>
+	<div class=col-md-10><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+	<div class=col-md-2></div>
+	<div class=col-md-10><input style="  width: 100%;
+    padding: 4px 5px;
+    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid grey;"
+    type="text"></div>
+</div>
+
+
+<div align="center" >
+	<button class="leftbutton btn" style=" margin-top:50px;margin-bottom:50px; border-radius: 5px; padding:10px;">Update Information</button>
+	
+</div>
+
+
+	
+</form>
+</div>
+
+	
+	 
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="col-md-2 w3-panel w3-card-2 responsive" style="margin: 8px;">
+				<h4>Recent contacts</h4>
+				<hr>
+				<h5>Lorem Hospital, xyz Road</h5>
+				<h5>Lorem Hospital, xyz Road</h5>
+				<h5>Lorem Hospital, xyz Road</h5>
+				<h5>Lorem Hospital, xyz Road</h5>
+				<h5>Lorem Hospital, xyz Road</h5>
+				<h5>Lorem Hospital, xyz Road</h5>
+			</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+	<div class="foo col-md-12">
+	<div class="row">
+		<div class="navbottom col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-2 col-md-1 hidden-sm hidden-xs" style=""></div>
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 contactdetails" style="">
+				<h3 class="text" style="color:white;">Contact Us</h3><br>
+				<p class="text footer-small" style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p><br>
+				<span class="glyphicon glyphicon-map-marker text footer-small"></span>&nbsp;&nbsp;<a class=" text footer-small" style="color:white;">2400 South Avenue A</a><br>
+				<span class="glyphicon glyphicon-earphone text footer-small"></span>&nbsp;&nbsp;<a class=" text footer-small" style="color:white;">+928 336 2000</a><br>
+				<span class="glyphicon glyphicon-envelope text footer-small"></span>&nbsp;&nbsp;<a class=" text footer-small" style="color:white;">support@medhumans.com</a><br>
+				<span class="glyphicon glyphicon-globe text footer-small"></span>&nbsp;&nbsp;<a class=" text footer-small navibottomlinks" href="#">www.medhumans.com</a><br>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 pagelinks footernavlinks" style="text-align:center;">
+				<p style="line-height:28px;">
+					<a href="#" class="text footer-small navibottomlinks">Home</a><br>
+					<a href="#" class="text footer-small navibottomlinks">Services</a><br>
+					<a href="#" class="text footer-small navibottomlinks">About Us</a><br>
+					<a href="#" class="text footer-small navibottomlinks">Team</a><br>
+					<a href="#" class="text footer-small navibottomlinks">Contact Us</a><br>
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 messageform">
+				<form name="my_form">
+					<input placeholder="Name" type="text" name="name" class="col-md-4 col-xs-4 inputfield" style="margin-top:10px;" required>
+					<input placeholder="E-mail" type="text" name="email" class="col-md-8 col-xs-8 inputfield" style="margin-top:10px;" required>
+					<input placeholder="Subject" type="text" class="col-md-12 col-xs-12 inputfield" style="margin-top:10px;" required>
+					<textarea placeholder="Message" type="text" rows="3" class="col-md-12 col-xs-12 inputfield" style="margin-top:10px;" required></textarea>
+					<a name="submit" class="col-md-12 col-sm-12 col-xs-12 col-lg-12 submitbutton" href="javascript:{}" onclick="document.getElementById('my_form').submit();">Send</a>
+				</form>
+			</div>
+			<div class="col-lg-2 col-md-1 hidden-sm hidden-xs" style=""></div>
+		</div>
+		
+		<div class="navbottom2 col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr></div>
+		<div class="footer col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: linear-gradient(to right,#2bc0ed,#7dd2ee,#2bc0ed);padding-bottom:20px;">
+			<div class="col-lg-2 col-md-1 hidden-sm hidden-xs"></div>
+			<div class="col-lg-1 col-md-3 col-sm-4 hidden-xs"><a href="#"><img  style="height:25px;width:110px;margin-left:0px;" src="medsearch_white.png"></a></div>
+			<div class="col-lg-3 col-md-3 col-sm-8 col-xs-12" style="color:white;text-align:center;"><a style="font-size:14px;color:white;">Copyright 2016 MedHumans. All Rights Reserved.</a></div>
+			<div class="col-lg-1 hidden-md hidden-sm hidden-xs"></div>
+			<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12" style="text-align:center;margin-top:5px;margin-right:7px;">
+					<a href="#"><img src="png/f.png" class="social-media" style="height:30px;width:30px;margin-left:35px;"></a>
+					<a href="#"><img src="png/y.png" class="social-media" style="height:30px;width:30px;margin-left:35px;"></a>
+					<a href="#"><img src="png/t.png" class="social-media" style="height:30px;width:30px;margin-left:35px;"></a>
+					<a href="#"><img src="png/g.png" class="social-media" style="height:30px;width:30px;margin-left:35px;"></a>
+			</div>
+			<div class="col-lg-2 col-md-1 hidden-sm hidden-xs"></div>
+		</div>
+</div>
+	</div>
+</div>
+</body>
+</html>
